@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="navigation-buttons">
+            <button onclick="window.location.href='index1.html';">Частина 1</button>
+            <button onclick="window.location.href='index2.html';">Частина 2</button>
+        </div>
+
+        <header>
+            <h1>Калькулятор: Струми КЗ (Частина 2)</h1>
+        </header>
+
+        <div class="calculator-wrapper">
+            <section class="inputs-container" aria-labelledby="inputs-heading-3">
+                <h2 id="inputs-heading-3">Введення даних (опори системи, Ом)</h2>
+
+                <div class="form-group">
+                    <label for="normalResistance">Нормальний режим Rс.норм:</label>
+                    <input id="normalResistance" class="normal-resistance" type="number" placeholder="Введіть дані">
+                </div>
+
+                <div class="form-group">
+                    <label for="normalReactance">Нормальний режим Xс.норм:</label>
+                    <input id="normalReactance" class="normal-reactance" type="number" placeholder="Введіть дані">
+                </div>
+
+                <div class="form-group">
+                    <label for="minResistance">Мінімальний режим Rс.мін:</label>
+                    <input id="minResistance" class="min-resistance" type="number" placeholder="Введіть дані">
+                </div>
+
+                <div class="form-group">
+                    <label for="minReactance">Мінімальний режим Xс.мін:</label>
+                    <input id="minReactance" class="min-reactance" type="number" placeholder="Введіть дані">
+                </div>
+                
+                <button id="calculateButton3" class="calculate-button">Результат</button>
+            </section>
+      
+            <section class="results-container" aria-labelledby="results-heading-3">
+                <h2 id="results-heading-3">Результати розрахунку (струми КЗ, А)</h2>
+                <div class="result-item">
+                    <span class="result-label">Струми трифазного КЗ на шинах 10(6) кВ, приведені до 110кВ (Iк(3)ш.пр):</span>
+                    <span id="threePhaseCurrent" class="result-value three-phase-current"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Струми двофазного КЗ на шинах 10(6) кВ, приведені до 110кВ (Iк(2)ш.пр):</span>
+                    <span id="twoPhaseCurrent" class="result-value two-phase-current"></span>
+                </div>
+                 <hr style="margin: 1rem 0; border-top: 1px solid #eee;">
+                <div class="result-item">
+                    <span class="result-label">Дійсні струми трифазного КЗ на шинах 10(6) кВ (Iк(3)ш):</span>
+                    <span id="realThreePhaseCurrent" class="result-value real-three-phase-current"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Дійсні струми двофазного КЗ на шинах 10(6) кВ (Iк(2)ш):</span>
+                    <span id="realTwoPhaseCurrent" class="result-value real-two-phase-current"></span>
+                </div>
+                <hr style="margin: 1rem 0; border-top: 1px solid #eee;">
+                <div class="result-item">
+                    <span class="result-label">Струми трифазного КЗ в точці К1 (після лінії) (Iк(3)К1):</span>
+                    <span id="threePhaseCurrentPoint" class="result-value three-phase-current-point"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Струми двофазного КЗ в точці К1 (після лінії) (Iк(2)К1):</span>
+                    <span id="twoPhaseCurrentPoint" class="result-value two-phase-current-point"></span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script3.js"></script>
+</body>
+</html>

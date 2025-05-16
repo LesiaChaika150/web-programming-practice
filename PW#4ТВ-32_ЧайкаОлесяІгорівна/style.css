@@ -1,0 +1,246 @@
+/* Загальні стилі */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #f7f9f7; 
+    color: #333;
+    line-height: 1.6;
+}
+
+.page-container { 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1rem;
+}
+
+/* Навігаційні кнопки */
+.navigation-buttons {
+    width: 100%;
+    max-width: 600px; 
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.navigation-buttons button {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: #5cb85c;
+    padding: .6rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin: 0 0.5rem;
+}
+
+.navigation-buttons button:hover {
+    background-color: #4cae4c;
+    transform: translateY(-1px);
+}
+
+
+/* Заголовок сторінки */
+header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.3rem;
+    color: #2E7D32; 
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+    font-weight: 700;
+}
+
+/* Секція калькулятора */
+.calculator-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1000px; 
+}
+
+
+/* Секція вводу даних */
+.inputs-container, .results-container { 
+    width: 100%;
+    background: #ffffff;
+    padding: 2rem;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+    border-radius: 12px;
+}
+
+@media (min-width: 769px) {
+    .calculator-wrapper {
+        flex-direction: row; 
+        align-items: flex-start; 
+    }
+    .inputs-container {
+        flex: 1.2; 
+    }
+    .results-container {
+        flex: 1;
+    }
+}
+
+
+.inputs-container h2, .results-container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.form-group {
+    margin-bottom: 1.25rem;
+}
+
+.form-group label,
+label.radio-group-label { 
+    font-weight: 600;
+    margin-bottom: .6rem;
+    display: block;
+    color: #495057;
+}
+
+.inputs-container input[type="number"],
+.inputs-container input[type="text"] {
+    width: 100%;
+    padding: .8rem 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.inputs-container input[type="number"]:focus,
+.inputs-container input[type="text"]:focus {
+    border-color: #4CAF50; 
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+    outline: none;
+}
+
+/* Radio buttons styling */
+.radio-option {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.radio-option input[type="radio"] {
+    margin-right: 0.5rem;
+    accent-color: #4CAF50; 
+}
+
+.radio-option label {
+    font-weight: normal;
+    color: #333;
+    margin-bottom: 0;
+}
+
+
+/* Кнопка */
+.calculate-button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4CAF50;
+    padding: .8rem 1.8rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: block;
+    width: 100%;
+    margin-top: 1.5rem;
+}
+
+.calculate-button:hover {
+    background-color: #3E8E41;
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(62, 142, 65, 0.3);
+}
+
+/* Секція результатів */
+.result-item {
+    background: #fdfdfd;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.8rem;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+    border-left: 4px solid #4CAF50;
+}
+
+.result-item:last-child {
+    margin-bottom: 0;
+}
+
+.result-label {
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: 0.9em;
+}
+
+.result-value {
+    font-weight: 500;
+    color: #2E7D32;
+    font-size: 1.05em;
+    display: block;
+    word-wrap: break-word;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    .page-container {
+        padding: 1rem;
+    }
+    header h1 {
+        font-size: 1.8rem;
+    }
+    .inputs-container, .results-container {
+        padding: 1.5rem;
+    }
+    .calculate-button {
+        padding: .9rem 1rem;
+    }
+    .results-container h2 {
+        font-size: 1.3rem;
+    }
+    .navigation-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .navigation-buttons button {
+        width: 100%;
+        margin: 0;
+    }
+}

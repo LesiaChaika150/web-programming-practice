@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="navigation-buttons">
+            <button onclick="window.location.href='index2.html';">Частина 2</button>
+            <button onclick="window.location.href='index3.html';">Частина 3</button>
+        </div>
+
+        <header>
+            <h1>Калькулятор: Перевірка провідників</h1>
+        </header>
+
+        <div class="calculator-wrapper">
+            <section class="inputs-container" aria-labelledby="inputs-heading-1">
+                <h2 id="inputs-heading-1">Введення даних</h2>
+
+                <div class="form-group">
+                    <label for="shortCircuitCurrent">Струм КЗ, А:</label>
+                    <input id="shortCircuitCurrent" class="short-circuit-current" type="number" placeholder="Введіть дані">
+                </div>
+
+                <div class="form-group">
+                    <label for="shutdownTime">Фіктивний час вимикання струму, с:</label>
+                    <input id="shutdownTime" class="shutdown-time" type="number" placeholder="Введіть дані">
+                </div>
+
+                <div class="form-group">
+                    <label class="radio-group-label">Матеріал провідника:</label>
+                    <div class="radio-option">
+                        <input type="radio" id="materialCopper" name="conductor-material" value="0" checked>
+                        <label for="materialCopper">Мідь</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="materialAluminum" name="conductor-material" value="1">
+                        <label for="materialAluminum">Алюміній</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="radio-group-label">Тип ізоляції:</label>
+                    <div class="radio-option">
+                        <input type="radio" id="insulationNone" name="insulation-type" value="0" checked>
+                        <label for="insulationNone">Неізольовані проводи і шини</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="insulationPaperRubberPVC" name="insulation-type" value="2">
+                        <label for="insulationPaperRubberPVC">Кабелі з паперовою і проводи з гумовою та полівінілхлоридною ізоляцією</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="insulationRubberPlastic" name="insulation-type" value="4">
+                        <label for="insulationRubberPlastic">Кабелі з гумовою та пластмасовою ізоляцією</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="tpPower">Потужність ТП (для розрахунку навантаження), кВА:</label> 
+                    <input id="tpPower" class="tp-power" type="number" placeholder="Введіть дані"> 
+                </div>
+
+                <div class="form-group">
+                    <label for="calculatedLoad">Розрахункове навантаження (Pm), кВА:</label>
+                    <input id="calculatedLoad" class="calculated-load" type="number" placeholder="Введіть дані">
+                </div>
+
+                <div class="form-group">
+                    <label for="installationTime">Час використання макс. навантаження (Тм), год:</label>
+                    <input id="installationTime" class="installation-time" type="number" placeholder="Введіть дані">
+                </div>
+
+                <button id="calculateButton1" class="calculate-button">Результат</button>
+            </section>
+
+            <section class="results-container" aria-labelledby="results-heading-1">
+                <h2 id="results-heading-1">Результати розрахунку</h2>
+                <div class="result-item">
+                    <span class="result-label">Розрахунковий струм для нормального режиму (Im):</span>
+                    <span id="normalCurrent" class="result-value normal-current"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Розрахунковий струм для післяаварійного режиму (Iпа):</span>
+                    <span id="emergencyCurrent" class="result-value emergency-current"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Економічний переріз (Sек):</span>
+                    <span id="economicCrossSection" class="result-value economic-cross-section"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Переріз за термічною стійкістю (Sт.с.):</span>
+                    <span id="finalCrossSection" class="result-value final-cross-section"></span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Калькулятор 2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="navigation-buttons">
+            <button onclick="window.location.href='index1.html';">Частина 1</button>
+            <button onclick="window.location.href='index3.html';">Частина 3</button>
+        </div>
+
+        <header>
+            <h1>Калькулятор: Струми КЗ (Частина 1)</h1>
+        </header>
+
+        <div class="calculator-wrapper">
+            <section class="inputs-container" aria-labelledby="inputs-heading-2">
+                <h2 id="inputs-heading-2">Введення даних</h2>
+
+                <div class="form-group">
+                    <label for="faultPowerInput">Потужність КЗ на шинах енергосистеми (Sк.сист), МВА:</label>
+                    <input id="faultPowerInput" class="fault-power-input" type="number" placeholder="Введіть дані">
+                </div>
+
+                <div class="form-group">
+                    <label class="radio-group-label">Середня номінальна напруга точки КЗ (Uср.ном):</label>
+                    <div class="radio-option">
+                        <input type="radio" id="voltage6_3" name="nominal-voltage" value="6.3" checked>
+                        <label for="voltage6_3">6.3 кВ</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="voltage10_5" name="nominal-voltage" value="10.5">
+                        <label for="voltage10_5">10.5 кВ</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="voltage37" name="nominal-voltage" value="37">
+                        <label for="voltage37">37 кВ</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="voltage115" name="nominal-voltage" value="115">
+                        <label for="voltage115">115 кВ</label>
+                    </div>
+                    <div class="radio-option">
+                        <input type="radio" id="voltage230" name="nominal-voltage" value="230">
+                        <label for="voltage230">230 кВ</label>
+                    </div>
+                </div>
+                
+                <button id="calculateButton2" class="calculate-button">Результат</button>
+            </section>
+      
+            <section class="results-container" aria-labelledby="results-heading-2">
+                <h2 id="results-heading-2">Результати розрахунку</h2>
+                <div class="result-item">
+                    <span class="result-label">Сумарний опір до точки КЗ (X∑):</span>
+                    <span id="totalResistance" class="result-value total-resistance"></span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Початкове діюче значення струму трифазного КЗ (Iп0):</span>
+                    <span id="initialFaultCurrent" class="result-value initial-fault-current"></span>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>
