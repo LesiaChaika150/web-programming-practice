@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ffdf5b, #7066c7);
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 400px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: black;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        .input-group label {
+            width: 50px;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #100954;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: rgba(119, 75, 159, 0.99);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f1f1f1;
+            border-radius: 5px;
+            text-align: left;
+            color: black;
+            min-height: 100px;
+            word-wrap: break-word;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="container">
+        <h2>Калькулятор 1</h2>
+        <div class="input-group"><label for="hp">Hp:</label><input id="hp" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="cp">Cp:</label><input id="cp" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="sp">Sp:</label><input id="sp" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="np">Np:</label><input id="np" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="op">Op:</label><input id="op" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="wp">Wp:</label><input id="wp" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="ap">Ap:</label><input id="ap" type="number" placeholder="%"></div>
+        <button onclick="calculate1()">Розрахувати</button>
+        <div id="result1" class="result"></div>
+    </div>
+
+    <div class="container">
+        <h2>Калькулятор 2</h2>
+        <div class="input-group"><label for="cf">Cf:</label><input id="cf" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="hf">Hf:</label><input id="hf" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="of">Of:</label><input id="of" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="sf">Sf:</label><input id="sf" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="x1">Qг:</label><input id="x1" type="number" placeholder="МДж/кг"></div>
+        <div class="input-group"><label for="x2">W:</label><input id="x2" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="x3">A:</label><input id="x3" type="number" placeholder="%"></div>
+        <div class="input-group"><label for="v">V:</label><input id="v" type="number" placeholder="мг/кг"></div>
+        <button onclick="calculate2()">Розрахувати</button>
+        <div id="result2" class="result"></div>
+    </div>
+</div>
+
+<script src="calculator.js"></script>
+</body>
+</html>
