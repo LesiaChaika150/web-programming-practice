@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розрахунок прибутку від сонячних електростанцій</title>
+    <link rel="stylesheet" href="Calculator3.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Розрахунок прибутку від сонячних електростанцій</h1>
+        </header>
+
+        <form id="calculationForm">
+            <section class="inputs" aria-labelledby="inputs-heading">
+                <h2 id="inputs-heading" class="visually-hidden">Введення даних</h2>
+                
+                <div class="form-group">
+                    <label for="averagePower">Середньодобова потужність Рс, МВт:</label>
+                    <input type="number" id="averagePower" placeholder="Введіть дані" inputmode="numeric">
+                </div>
+                
+                <div class="form-group">
+                    <label for="currentDeviation">Наявне середньоквдратичне відхилення q1, МВт:</label>
+                    <input type="number" id="currentDeviation" placeholder="Введіть дані" inputmode="numeric">
+                </div>
+                
+                <div class="form-group">
+                    <label for="predictedDeviation">Передбачуване середньоквдратичне відхилення q2, МВт:</label>
+                    <input type="number" id="predictedDeviation" placeholder="Введіть дані" inputmode="numeric">
+                </div>
+
+                <div class="form-group">
+                    <label for="pricePerKwh">Вартість електроенергії, грн/кВт*год:</label>
+                    <input type="number" id="pricePerKwh" placeholder="Введіть дані" inputmode="numeric">
+                </div>
+            </section>
+
+            <button type="button" id="calculateButton">Результат</button>
+        </form>
+
+        <section class="results" aria-labelledby="results-heading">
+            <h2 id="results-heading">Результати розрахунку</h2>
+            
+            <div class="result-item">
+                <span class="result-label">Наявна частка електроенергії без небалансів:</span>
+                <span class="result-value" id="currentShare"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Прибуткова електроенергія (наявна):</span>
+                <span class="result-value" id="currentProfitableEnergy"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Штрафна електроенергія (наявна):</span>
+                <span class="result-value" id="currentPenaltyEnergy"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Прибуток (наявний):</span>
+                <span class="result-value" id="currentProfit"></span>
+            </div>
+            <hr class="result-divider">
+            <div class="result-item">
+                <span class="result-label">Передбачувана частка електроенергії без небалансів:</span>
+                <span class="result-value" id="predictedShare"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Передбачувана прибуткова електроенергія:</span>
+                <span class="result-value" id="predictedProfitableEnergy"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Передбачувана штрафна електроенергія:</span>
+                <span class="result-value" id="predictedPenaltyEnergy"></span>
+            </div>
+            <div class="result-item">
+                <span class="result-label">Передбачуваний прибуток:</span>
+                <span class="result-value" id="predictedProfit"></span>
+            </div>
+        </section>
+    </div>
+
+    <script src="Calculator3.js"></script>
+</body>
+</html>
