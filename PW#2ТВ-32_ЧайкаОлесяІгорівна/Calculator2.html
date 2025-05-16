@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ua">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор Викидів</title>
+    <link rel="stylesheet" href="Calculator2.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Калькулятор Викидів</h1>
+        </header>
+
+        <form id="calculationForm">
+            <section class="inputs" aria-labelledby="inputs-heading">
+                <h2 id="inputs-heading" class="visually-hidden">Введення даних</h2>
+                
+                <div class="form-group">
+                    <label for="coal">Донецьке газове вугілля марки ГР (т):</label>
+                    <input type="text" id="coal" value="759834,56" inputmode="numeric" pattern="[0-9.,]*">
+                </div>
+                
+                <div class="form-group">
+                    <label for="oilFuel">Високосірчистий мазут марки 40 (т):</label>
+                    <input type="text" id="oilFuel" value="99672,62" inputmode="numeric" pattern="[0-9.,]*">
+                </div>
+                
+                <div class="form-group">
+                    <label for="gas">Природний газ (м³):</label>
+                    <input type="text" id="gas" value="115923,14" inputmode="numeric" pattern="[0-9.,]*">
+                </div>
+            </section>
+
+            <button type="button" id="calculateButton">Розрахувати</button>
+        </form>
+
+        <section class="results" aria-labelledby="results-heading">
+            <h2 id="results-heading">Результат Розрахунку</h2>
+            
+            <div class="emission-result">
+                <span class="result-label">Показник емісії (вугілля) (г/ГДж):</span>
+                <span class="result-value" id="coalEmissionIndex"></span>
+            </div>
+            <div class="emission-result">
+                <span class="result-label">Валові викиди при спалюванні вугілля (т):</span>
+                <span class="result-value" id="coalEmissions"></span>
+            </div>
+            <div class="emission-result">
+                <span class="result-label">Показник емісії (мазут) (г/ГДж):</span>
+                <span class="result-value" id="oilFuelEmissionIndex"></span>
+            </div>
+            <div class="emission-result">
+                <span class="result-label">Валові викиди при спалюванні мазуту (т):</span>
+                <span class="result-value" id="oilFuelEmissions"></span>
+            </div>
+            <div class="emission-result">
+                <span class="result-label">Показник емісії (природний газ) (г/ГДж):</span>
+                <span class="result-value" id="gasEmissionIndex"></span>
+            </div>
+            <div class="emission-result">
+                <span class="result-label">Валові викиди при спалюванні природного газу (т):</span>
+                <span class="result-value" id="gasEmission"></span>
+            </div>
+        </section>
+    </div>
+
+    <script src="Calculator2.js" defer></script>
+</body>
+</html>

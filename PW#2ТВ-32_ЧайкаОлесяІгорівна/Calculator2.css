@@ -1,0 +1,162 @@
+/* Загальні стилі */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    white-space: nowrap; /* optional */
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    background-color: #f7f9f7; /* Дуже світлий зеленувато-сірий фон */
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+}
+
+/* Заголовок сторінки */
+header {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #2E7D32; /* Темно-зелений для головного заголовка */
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.05);
+    font-weight: 700;
+}
+
+/* Секція вводу даних */
+.inputs {
+    width: 100%;
+    max-width: 550px;
+    background: #ffffff;
+    padding: 2.5rem;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+    border-radius: 12px;
+    margin-bottom: 2.5rem;
+}
+
+.inputs label {
+    font-weight: 600;
+    margin-bottom: .75rem;
+    display: block;
+    color: #495057; /* Залишаємо для контрасту */
+}
+
+.inputs input[type="text"] {
+    width: 100%;
+    padding: .9rem 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.inputs input[type="text"]:focus {
+    border-color: #4CAF50; /* Зелений акцент при фокусі */
+    box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25); /* Зелена тінь при фокусі */
+    outline: none;
+}
+
+/* Кнопка */
+button {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #4CAF50; /* Основний зелений для кнопки */
+    padding: .85rem 2rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: block;
+    margin: 0 auto 2.5rem auto;
+}
+
+button:hover {
+    background-color: #3E8E41; /* Темніший зелений при наведенні */
+    transform: translateY(-2px);
+    box-shadow: 0px 4px 10px rgba(62, 142, 65, 0.3); /* Тінь з зеленим відтінком */
+}
+
+/* Секція результатів */
+.results {
+    width: 100%;
+    max-width: 550px;
+}
+
+.results h1 {
+    font-size: 2rem;
+    color: #333; /* Заголовок результатів може бути нейтральним */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.emission-result {
+    background: #ffffff;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    border-left: 5px solid #4CAF50;
+}
+
+.emission-result .result-label {
+    font-weight: 600;
+    color: #495057;
+    display: block;
+    margin-bottom: 0.3rem;
+    font-size: 0.9em;
+}
+
+.emission-result .result-value {
+    font-weight: 500; 
+    color: #3E8E41;
+    font-size: 1.1em;
+    display: block;
+}
+
+/* Адаптивність (приклад) */
+@media (max-width: 600px) {
+    .container {
+        padding: 1rem;
+    }
+    header h1 {
+        font-size: 2.2rem;
+    }
+    .inputs, .results {
+        padding: 1.5rem;
+    }
+    button {
+        width: 100%;
+        padding: .9rem 1rem;
+    }
+    .results h1 {
+        font-size: 1.8rem;
+    }
+}
