@@ -1,0 +1,215 @@
+:root {
+    --bg-color: #f6f8f7;
+    --container-bg: #ffffff;
+    --text-color: #333333;
+    --heading-color: #1a535c;
+    --accent-color: #4ecdc4;
+    --accent-hover-color: #3db8af;
+    --border-color: #dde4e2;
+    --placeholder-color: #95a5a6;
+    --shadow-color: rgba(0, 0, 0, 0.07);
+    --result-value-bg: #e6f8f7;
+    --footer-text-color: #7f8c8d;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 20px auto;
+    background-color: var(--container-bg);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+header h1 {
+    color: var(--heading-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-weight: 500;
+    font-size: 1.7em;
+}
+
+.calculator-layout {
+    display: flex;
+    flex-direction: column; 
+    gap: 30px;
+}
+
+.calculator-form,
+.results-section {
+    background-color: var(--container-bg); 
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.results-section h2 {
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 1.3em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.form-field {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.form-field:last-child {
+    margin-bottom: 0;
+}
+
+.form-field label {
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: #34495e; 
+    font-size: 0.95em;
+}
+.form-field label sub {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+    top: 0.3em;
+}
+
+.form-field input[type="number"] {
+    width: calc(100% - 24px); 
+    padding: 11px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fdfdff;
+}
+
+.form-field input[type="number"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.15);
+    outline: none;
+}
+
+.form-field input[type="number"]::placeholder {
+    color: var(--placeholder-color);
+    font-style: italic;
+    font-size: 0.9em;
+}
+
+.form-actions {
+    text-align: left; 
+    margin-top: 25px;
+}
+
+.result {
+    background-color: var(--accent-color);
+    color: var(--heading-color); 
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease, color 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result:hover {
+    background-color: var(--accent-hover-color);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.result:active {
+    background-color: #30a098; 
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.result-item {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    padding: 10px 0;
+}
+
+.result-item label {
+    font-weight: 400;
+    color: #34495e;
+    font-size: 1em;
+    margin-bottom: 0; 
+}
+
+.result-value {
+    font-weight: 700;
+    color: var(--heading-color);
+    font-size: 1.25em;
+    background-color: var(--result-value-bg);
+    padding: 8px 12px;
+    border-radius: 5px;
+    min-width: 80px; 
+    text-align: right;
+}
+.results-section span:not(.result-value) {
+    font-size: 1em;
+    color: #555;
+    margin-left: 5px;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    color: var(--footer-text-color);
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 15px;
+    }
+    .container {
+        padding: 20px 15px;
+        margin: 10px auto;
+    }
+    header h1 {
+        font-size: 1.5em;
+        margin-bottom: 25px;
+    }
+    .results-section h2 {
+        font-size: 1.2em;
+    }
+    .form-field input[type="number"] {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+    .result {
+        width: 100%;
+        box-sizing: border-box;
+    }
+     .result-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    .result-value {
+        text-align: left;
+    }
+}

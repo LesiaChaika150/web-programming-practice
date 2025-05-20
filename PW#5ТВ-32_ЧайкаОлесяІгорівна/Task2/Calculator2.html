@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор збитків</title>
+    <link rel="stylesheet" href="Calculator2.css">
+    <link href="Calculator2.js" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Розрахунок збитків від перерв електропостачання</h1>
+        </header>
+
+        <main class="calculator-layout">
+            <section class="calculator-form">
+                <div class="form-field">
+                    <label for="e">Ціна аварійних вимкнень, грн/кВт⋅год:</label>
+                    <input id="e" class="e" type="number" placeholder="Напр: 2.5" value="2.5">
+                </div>
+
+                <div class="form-field">
+                    <label for="p">Ціна планових вимкнень, грн/кВт⋅год:</label>
+                    <input id="p" class="p" type="number" placeholder="Напр: 1.0" value="1.0">
+                </div>
+
+                <div class="form-field">
+                    <label for="t">Середній час відновлення аварії (T<sub>відн.авар</sub>), частка року:</label>
+                    <input id="t" class="t" type="number" placeholder="Напр: 0.00057 (5 год / 8760 год)" value="0.00057">
+                </div>
+                
+                <div class="form-field">
+                    <label for="k">Сумарний час планових відключень (T<sub>план.сумарн</sub>), частка року:</label>
+                    <input id="k" class="k" type="number" placeholder="Напр: 0.00228 (20 год / 8760 год)" value="0.00228">
+                </div>
+                
+                <div class="form-actions">
+                    <button id="calculateLossButton" class="result">Розрахувати</button>
+                </div>
+            </section>
+          
+            <section class="results-section">
+                <h2>Результат:</h2>
+                <div class="result-item">
+                    <label for="lossDisplay">Передбачувана сума збитків:</label>
+                    <span id="lossDisplay" class="l result-value"></span> <span>грн</span>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p> Калькулятор збитків.</p>
+        </footer>
+    </div>
+    <script src="Calculator2.js" defer></script>
+</body>
+</html>

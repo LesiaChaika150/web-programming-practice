@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Калькулятор надійності систем електропередачі</title>
+    <link rel="stylesheet" type="text/css" href="Calculator1.css">
+    <link href="Calculator1.js" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Порівняння надійності одноколової та двоколової систем електропередачі</h1>
+        </header>
+
+        <main class="calculator-layout">
+            <form id="reliabilityForm">
+                <div class="input-sections">
+                    <fieldset class="input-group">
+                        <legend>Параметри обладнання</legend>
+                        
+                        <div class="form-field">
+                            <label for="t110">T-110 кВ:</label>
+                            <input id="t110" class="t110" type="number" placeholder="Кількість" value="1">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="t35">T-35 кВ:</label>
+                            <input id="t35" class="t35" type="number" placeholder="Кількість" value="1">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="t10k">T-10 кВ (кабельна мережа):</label>
+                            <input id="t10k" class="t10k" type="number" placeholder="Кількість" value="0">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="t10p">T-10 кВ (повітряна мережа):</label>
+                            <input id="t10p" class="t10p" type="number" placeholder="Кількість" value="0">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="b110">В-110 кВ (елегазовий):</label>
+                            <input id="b110" class="b110" type="number" placeholder="Кількість" value="1">
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="b10m">В-10 кВ (малооливний):</label>
+                            <input id="b10m" class="b10m" type="number" placeholder="Кількість" value="0">
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="b10v">В-10 кВ (вакуумний):</label>
+                            <input id="b10v" class="b10v" type="number" placeholder="Кількість" value="0">
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="sh">Збірні шини 10 кВ (на 1 приєднання):</label>
+                            <input id="sh" class="sh" type="number" placeholder="Кількість" value="0">
+                        </div>
+
+                        <div class="form-field">
+                            <label for="av">АВ-0.38 кВ:</label>
+                            <input id="av" class="av" type="number" placeholder="Кількість" value="0">
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="ed610">ЕД-6/10 кВ:</label>
+                            <input id="ed610" class="ed610" type="number" placeholder="Кількість" value="0">
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="ed038">ЕД-0.38 кВ:</label>
+                            <input id="ed038" class="ed038" type="number" placeholder="Кількість" value="0">
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset class="input-group">
+                        <legend>Параметри ліній</legend>
+                        <div class="form-field">
+                            <label for="pl110">ПЛ-110 кВ:</label>
+                            <input id="pl110" class="pl110" type="number" placeholder="Кількість" value="1">
+                        </div>
+                    
+                        <div class="form-field">
+                            <label for="pl35">ПЛ-35 кВ:</label>
+                            <input id="pl35" class="pl35" type="number" placeholder="Кількість" value="0">
+                        </div>
+                    
+                        <div class="form-field">
+                            <label for="pl10">ПЛ-10 кВ:</label>
+                            <input id="pl10" class="pl10" type="number" placeholder="Кількість" value="0">
+                        </div>
+                    
+                        <div class="form-field">
+                            <label for="kl10t">КЛ-10 кВ (траншея):</label>
+                            <input id="kl10t" class="kl10t" type="number" placeholder="Кількість" value="0">
+                        </div>
+                        
+                        <div class="form-field">
+                            <label for="kl10c">КЛ-10 кВ (кабельний канал):</label>
+                            <input id="kl10c" class="kl10c" type="number" placeholder="Кількість" value="0">
+                        </div>
+                    </fieldset>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="button" class="result">Розрахувати</button> 
+                </div>
+            </form>
+
+            <section class="results-section">
+                <h2>Результати розрахунку:</h2>
+                <div class="result-item">
+                    <label for="wOs">Частота відмов одноколової системи (ω<sub>ос</sub>):</label>
+                    <span id="wOs" class="wOs result-value"></span>
+                </div>
+
+                <div class="result-item">
+                    <label for="t">Середня тривалість відновлення (Т<sub>в</sub>):</label>
+                    <span id="t" class="t result-value"></span>
+                </div>
+                
+                <div class="result-item">
+                    <label for="kE">Коефіцієнт аварійного простою (К<sub>е</sub>):</label>
+                    <span id="kE" class="kE result-value"></span>
+                </div>
+
+                <div class="result-item">
+                    <label for="kP">Коефіцієнт планового простою (К<sub>п</sub>):</label>
+                    <span id="kP" class="kP result-value"></span>
+                </div>
+
+                <div class="result-item">
+                    <label for="wDk">Частота відмов двох кіл (ω<sub>дк</sub>):</label>
+                    <span id="wDk" class="wDk result-value"></span>
+                </div>
+
+                <div class="result-item">
+                    <label for="wDs">Частота відмов двоколової системи з секціонуванням (ω<sub>дс</sub>):</label>     
+                    <span id="wDs" class="wDs result-value"></span>    
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p> Калькулятор надійності. Розроблено з <span class="heart">♥</span>.</p>
+        </footer>
+    </div>
+
+    <script src="Calculator1.js" defer></script>
+</body>
+</html>

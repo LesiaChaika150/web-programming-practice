@@ -1,0 +1,284 @@
+/* --- Загальні стилі --- */
+:root {
+    --bg-color: #f4f7f6; /* Дуже світло-сірий, майже білий */
+    --container-bg: #ffffff; /* Білий */
+    --text-color: #333333; /* Темно-сірий */
+    --heading-color: #2c3e50; /* Темний синьо-сірий */
+    --accent-color: #3498db; /* Сучасний синій */
+    --accent-hover-color: #2980b9; /* Темніший синій для hover */
+    --border-color: #dce4e8; /* Світло-сірий для меж */
+    --placeholder-color: #95a5a6; /* Світліший сірий для плейсхолдера */
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --result-value-bg: #eaf2f8; /* Дуже світлий синій фон для значення */
+    --footer-text-color: #7f8c8d;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: var(--container-bg);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px var(--shadow-color);
+}
+
+header h1 {
+    color: var(--heading-color);
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 35px;
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+/* --- Макет калькулятора --- */
+.calculator-layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+#reliabilityForm {
+    flex: 3; /* Форма займає більше місця */
+    min-width: 320px;
+}
+
+.results-section {
+    flex: 2; /* Результати займають менше місця */
+    min-width: 300px;
+    background-color: var(--container-bg); /* Можна зробити трохи іншим, наприклад #f9fbfd */
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.results-section h2 {
+    color: var(--heading-color);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 1.4em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+/* --- Групи полів вводу --- */
+.input-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    flex: 1; 
+    min-width: calc(50% - 12.5px); /* Намагається зайняти половину, враховуючи gap */
+    border: 1px solid var(--border-color);
+    padding: 20px 25px 25px 25px;
+    border-radius: 8px;
+    background-color: var(--container-bg);
+}
+
+.input-group legend {
+    font-weight: 500;
+    color: var(--heading-color);
+    padding: 0 10px;
+    margin-left: -5px; 
+    font-size: 1.2em;
+}
+
+/* --- Стилізація полів форми --- */
+.form-field {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+.form-field:last-child {
+    margin-bottom: 0;
+}
+
+.form-field label {
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: #495057; /* Трохи темніший для кращого контрасту */
+    font-size: 0.95em;
+}
+
+.form-field input[type="number"] {
+    width: calc(100% - 24px); /* Враховуємо padding */
+    padding: 11px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    background-color: #fdfdff;
+}
+
+.form-field input[type="number"]:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.15);
+    outline: none;
+}
+
+.form-field input[type="number"]::placeholder {
+    color: var(--placeholder-color);
+    font-style: italic;
+}
+
+/* --- Кнопка --- */
+.form-actions {
+    text-align: left; /* Або center, якщо кнопка одна */
+    margin-top: 10px; /* Зменшив, бо вона тепер всередині форми */
+}
+
+.result {
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.05em;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.result:hover {
+    background-color: var(--accent-hover-color);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.result:active {
+    background-color: #2471a3; /* Ще темніший при натисканні */
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* --- Секція результатів --- */
+.result-item {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e7e7e7;
+}
+.result-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.result-item label {
+    font-weight: 400;
+    color: #495057;
+    margin-bottom: 6px;
+    font-size: 0.95em;
+}
+
+.result-value {
+    font-weight: 500;
+    color: var(--accent-color);
+    font-size: 1.15em;
+    min-height: 1.3em; 
+    background-color: var(--result-value-bg);
+    padding: 8px 10px;
+    border-radius: 5px;
+    word-break: break-all; /* Для довгих чисел у науковій нотації */
+}
+.result-value sup {
+    font-size: 0.75em; /* Коректний розмір для степеня */
+    position: relative;
+    top: -0.3em;
+}
+
+
+/* --- Підвал --- */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9em;
+    color: var(--footer-text-color);
+}
+footer .heart {
+    color: #e74c3c; /* Червоне серце */
+    font-size: 1.1em;
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 1024px) {
+    .input-group {
+        min-width: calc(100% - 0px); /* Fieldset займає всю доступну ширину */
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    .container {
+        padding: 20px;
+        margin: 10px auto;
+    }
+    .calculator-layout {
+        flex-direction: column;
+    }
+    #reliabilityForm, .results-section {
+        flex: none; 
+        width: 100%;
+    }
+    header h1 {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+    .results-section h2 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        font-size: 15px;
+    }
+    .container {
+        padding: 15px;
+    }
+    header h1 {
+        font-size: 1.4em;
+    }
+    .input-group legend {
+        font-size: 1.1em;
+    }
+    .form-field input[type="number"] {
+        padding: 10px;
+        font-size: 0.95em;
+    }
+    .result {
+        padding: 10px 20px;
+        font-size: 1em;
+        width: 100%; /* Кнопка на всю ширину */
+        box-sizing: border-box;
+    }
+    .results-section h2 {
+        font-size: 1.2em;
+    }
+    .result-value {
+        font-size: 1.1em;
+    }
+}
